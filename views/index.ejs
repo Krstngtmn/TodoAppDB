@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Todo List</title>
+</head>
+
+<body>
+  <main class="app-container">
+    <h1>To-do List</h1>
+
+    <form class="input-form" action="/" method="post">
+      <input class="todo-input" id="prompt" type="text" name="newItem">
+      <button class="todo-button" type="submit" name="button">+</button>
+    </form>
+
+    <div class="todo-container">
+      <ul class="todo-list">
+        <% for (let i=0; i < items.length; i++){ %>
+          <li class="todo todo-item">
+            <label class="check-container">
+              <%= items[i].taskName %>
+                <input value="" aria-label="taskCheck" type="checkbox" id="taskCheck" name="taskCheck">
+                <span class="checkmark"></span>
+            </label>
+
+            <!-- <label>
+              <input value="" aria-label="taskCheck" type="checkbox" id="taskCheck" name="taskCheck" />
+              <span><%= items[i].taskName %></span>
+            </label> -->
+          </li>
+          <% } %>
+    </div>
+    </ul>
+    </div>
+    <form action="/remove" method="post">
+      <button class="emptyBtn" type="submit">Clear Tasks</button>
+    </form>
+  </main>
+</body>
+
+</html>
